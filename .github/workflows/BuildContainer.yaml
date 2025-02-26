@@ -85,7 +85,6 @@ jobs:
         tags: |
           ${{env.DOCKER_USERNAME}}/${{env.GH_REPONAME}}:latest
           ${{env.DOCKER_USERNAME}}/${{env.GH_REPONAME}}:${{env.APP_VERSION}}
-          ${{env.DOCKER_USERNAME}}/${{env.GH_REPONAME}}:${{env.APP_COLOR}}
 
     - name: "Docker Hub Description"
       uses: peter-evans/dockerhub-description@v3
@@ -100,7 +99,6 @@ jobs:
         docker buildx imagetools create \
           --tag ghcr.io/${{env.GH_REPO}}:latest \
           --tag ghcr.io/${{env.GH_REPO}}:${{env.APP_VERSION}} \
-          --tag ghcr.io/${{env.GH_REPO}}:${{env.APP_COLOR}} \
           ${{env.GH_REPO}}:latest
 
     - name: "Vulnerability scan container image with Grype"
