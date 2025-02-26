@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: pod2
+  name: pod2
+spec:
+  containers:
+  - image: ghcr.io/wiktorvip/app-test1:0.2
+    name: pod2
+    securityContext:
+      privileged: true
