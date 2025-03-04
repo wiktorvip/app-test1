@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-pods1
+  labels:
+    app: deployment-pods1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deployment-pods1
+  template:
+    metadata:
+      labels:
+        app: deployment-pods1
+    spec:
+      containers:
+      - name: app-test1
+        image: ghcr.io/wiktorvip/app-test1:0.1
+        securityContext:
+          privileged: true
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-pods2
+  labels:
+    app: deployment-pods2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deployment-pods2
+  template:
+    metadata:
+      labels:
+        app: deployment-pods2
+    spec:
+      containers:
+      - name: app-test2
+        image: ghcr.io/wiktorvip/app-test1:0.2
+        securityContext:
+          privileged: true
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-pods3
+  labels:
+    app: deployment-pods3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deployment-pods3
+  template:
+    metadata:
+      labels:
+        app: deployment-pods3
+    spec:
+      containers:
+      - name: app-test3
+        image: ghcr.io/wiktorvip/app-test1:0.3
+        securityContext:
+          privileged: true

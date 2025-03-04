@@ -4,8 +4,8 @@ LABEL maintainer="VIP"
 
 USER root
 
-COPY mem.sh .
+COPY script.sh .
 
-RUN chmod +x mem.sh
+RUN chmod +x script.sh
 
-CMD ["sh","mem.sh"]
+CMD ["sh","script.sh"]
